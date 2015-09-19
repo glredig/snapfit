@@ -47,6 +47,12 @@ module.exports = function(config) {
 
 		// Continuous Integration mode
 		// If true, it capture browsers, run tests and exit
-		singleRun: true
+		singleRun: true,
+		client: {
+			captureConsole: true,
+			mocha: {
+				bail: true
+			}
+		}
 	});
 };
