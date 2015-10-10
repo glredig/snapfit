@@ -10,4 +10,4 @@ var mongoose = require('mongoose'),
 
 var crud = require('./crud.server.controller')('Weighin', 'date');
 
-model.exports = crud;
+module.exports = crud;

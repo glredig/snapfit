@@ -18,7 +18,7 @@ var user, weighin;
  */
 describe('Weighin Model', function() {
 	describe('Saving', function() {
-		it ('saves new record', function() {
+		it ('saves new record', function(done) {
 			var weighin = new Weighin({
 				weight: 185.0,
 				date: Date.now()
@@ -29,7 +29,7 @@ describe('Weighin Model', function() {
 				done();
 			});
 		});
-		it ('throws validation error if weight is missing', function() {
+		it ('throws validation error if weight is missing', function(done) {
 			var weighin = new Weighin({
 				date: Date.now()
 			});
@@ -41,7 +41,8 @@ describe('Weighin Model', function() {
 			});
 		});
 		// Getting odd behavior. Need to return.
-		xit ('throws validation error if weight is non-numeric', function() {
+		it ('throws validation error if weight is non-numeric', function(done, pending) {
+			pending();
 			var weighin = new Weighin({
 				weight: 'hello',
 				date: Date.now()

@@ -53,7 +53,7 @@ module.exports = function(modelName, sortBy) {
 			model.remove(function(err) {
 				if (err) {
 					return res.status(400).send({
-						message: errorHandler.getErrorMessage(err);
+						message: errorHandler.getErrorMessage(err)
 					});
 				}
 				else {
@@ -66,7 +66,7 @@ module.exports = function(modelName, sortBy) {
 			Model.find().exec(function(err, models) {
 				if (err) {
 					return res.status(400).send({
-						message: errorHandler.getErrorMessage(err);
+						message: errorHandler.getErrorMessage(err)
 					});
 				}
 				else {
@@ -76,7 +76,7 @@ module.exports = function(modelName, sortBy) {
 		},
 
 		getById: function(req, res, next, id) {
-			if (!Mongoose.Types.objectId.isValid(id)) {
+			if (!mongoose.Types.objectId.isValid(id)) {
 				return res.status(400).send({
 					message: modelName + ' is invalid'
 				});
@@ -95,5 +95,5 @@ module.exports = function(modelName, sortBy) {
 				next();
 			});
 		}
-	}
-}    
+	};
+};    

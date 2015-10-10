@@ -13,5 +13,5 @@ module.exports = function(app) {
     	.put(users.requiresLogin, weighins.update)
     	.delete(users.requiresLogin, weighins.delete);
 
-    app.param('weighinId', weighins.weighinById);
+    app.param('weighinId', weighins.getById);
 };
